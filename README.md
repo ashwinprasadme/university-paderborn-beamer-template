@@ -11,8 +11,6 @@ Easy to use LaTeX Beamer template that closely follows the official UPB PPT temp
 
 ## Preview
 
-Sample PDF is available here [Usage-Example](Src/Usage-Example.pdf)
-
 ![Preview1](Doc/Preview/1.png)
 ![Preview2](Doc/Preview/2.png)
 
@@ -55,7 +53,7 @@ Note: If LaTeX is completely new to you, it makes sense to watch the video tutor
 
 + Official UPB typeface "Arial" has been left out of this template, a close replacement typeface "Helvetica" has been used here. However, "Arial Narrow" can be used by following the guide [here](https://tex.stackexchange.com/a/20145).
 
-+ Colors defined under the file `internal/upb-unicolors.tex` are official UPB color codes taken from the "UPB Corporate Design Color Definition" []
++ Colors defined under the file `internal/upb-unicolors.tex` are official UPB color codes taken from the "UPB Corporate Design Color Definition"
 
 + On ubuntu you might have to run `sudo apt-get install texlive-fonts-recommended` to install fonts
 
