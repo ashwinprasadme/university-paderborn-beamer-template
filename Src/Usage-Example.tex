@@ -70,7 +70,7 @@ Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. A
 
 \begin{frame}
 \frametitle{Bullet Points}
-\begin{itemize}
+\begin{itemize}[<+->]
 \item Lorem ipsum dolor sit amet, consectetur adipiscing elit
 \begin{itemize}
 \item Aliquam blandit faucibus nisi, sit amet dapibus enim tempus eu
@@ -84,6 +84,29 @@ Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. A
 \end{frame}
 
 %------------------------------------------------
+
+\begin{frame}[fragile]
+\frametitle{Code Example}
+
+	
+	{
+		
+		\begin{lstlisting}[language=c,caption=C Code,basicstyle=\ttfamily,linebackgroundcolor={\ifnum\value{lstnumber}=2\color{uni-green}\else\color{white}\fi}]		
+int cond_select(bool b, int x, int y){
+	if(b){
+		return x;
+	} 
+	else {
+		return y;
+	}
+}
+		\end{lstlisting}
+		
+	}
+	
+%------------------------------------------------
+
+\end{frame}
 
 \begin{frame}
 \frametitle{Blocks of Highlighted Text}
@@ -153,11 +176,28 @@ $E = mc^2$
 
 \begin{frame}
 \frametitle{Figure}
-Change the location on this slide to include your own image from the images directory found on the same directory as the template .TeX file.
+Change the location on this slide to include your own image from the images directory found on the same directory as the template .TeX file. Can also include overlay image in the second frame of this slide.
 \begin{figure}
 \includegraphics[width=0.8\linewidth]{images/logo.pdf}
 \end{figure}
+
+\begin{onlyenv}<2>
+	%\begin{tikzpicture}[remember picture,overlay]
+	%\node[drop shadow={shadow xshift=.8ex,shadowyshift=-.8ex},fill=white,draw] at (0,0) {\includegraphics[width=12cm]{images/deadstoreex}};
+	%%\node at (current page.center) {\includegraphics[width=12cm]{images/deadstoreex}};
+	%
+	%
+	%\end{tikzpicture}
+	
+	\begin{tikzpicture}[remember picture,overlay]
+	\node[drop shadow={shadow xshift=.8ex,shadow yshift=-.8ex},fill=white,draw] at (current page.center) {\includegraphics[width=11cm]{images/logo.pdf}};
+	\end{tikzpicture}
+	
+\end{onlyenv}
 \end{frame}
+
+
+
 
 %------------------------------------------------
 
