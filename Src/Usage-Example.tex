@@ -88,10 +88,12 @@ Sed diam enim, sagittis nec condimentum sit amet, ullamcorper sit amet libero. A
 \begin{frame}[fragile]
 \frametitle{Code Example}
 
+% If using lstlinebgrd package
+%		\begin{lstlisting}[language=c,caption=C Code,basicstyle=\ttfamily,linebackgroundcolor={\ifnum\value{lstnumber}=2\color{uni-green}\else\color{white}\fi}]		
 	
 	{
 		
-		\begin{lstlisting}[language=c,caption=C Code,basicstyle=\ttfamily,linebackgroundcolor={\ifnum\value{lstnumber}=2\color{uni-green}\else\color{white}\fi}]		
+		\begin{lstlisting}[language=c,caption=C Code,basicstyle=\ttfamily]		
 int cond_select(bool b, int x, int y){
 	if(b){
 		return x;
