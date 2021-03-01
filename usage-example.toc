@@ -1,3 +1,0 @@
-\babel@toc {english}{}
-\beamer@sectionintoc {1}{First Section}{3}{0}{1}
-\beamer@subsectionintoc {1}{1}{Subsection Example}{3}{0}{1}
