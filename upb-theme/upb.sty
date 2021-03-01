@@ -1,0 +1,264 @@
+% beamerthemehni_iem.sty
+% Ashwin Prasad SV
+% ashwin.prasad@upb.de
+
+% This is suggestion for using the HNI IEM official design
+% in LaTeX-Beamer. Feel free to optimize this implementation.
+
+\RequirePackage{graphicx,color}
+
+\RequirePackage{tikz}
+\usetikzlibrary{shadows}
+
+\RequirePackage{helvet} % Font
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\lenitem}[2][.9\linewidth]{	\vspace{0.2cm}\parbox[t]{#1}{\strut#2 \strut}}
+
+\newcommand{\hnititlebackground}{\usebackgroundtemplate{%
+		\includegraphics[width=\paperwidth,page=1]{\templatePath/images/backgrounds/titlebackground.pdf}}}
+
+\newcommand{\hnirightbackground}{\usebackgroundtemplate{%
+		\includegraphics[width=\paperwidth,height=\paperheight,page=3]{\templatePath/images/backgrounds/backgrounds-original.pdf}}}
+
+\newcommand{\hnileftbackground}{\usebackgroundtemplate{%
+		\includegraphics[width=\paperwidth,height=\paperheight,page=2]{\templatePath/images/backgrounds/backgrounds-original.pdf}}}
+
+\newcommand{\hnifullbackground}{	
+	\color{white}
+	\thispagestyle{empty}
+	\usebackgroundtemplate{%
+		\includegraphics[width=\paperwidth,page=7]{\templatePath/images/backgrounds/image9}}}
+
+
+\newcommand{\hnicontactsbackground}{
+	\thispagestyle{empty}
+	\usebackgroundtemplate{%
+		\includegraphics[width=\paperwidth,height=\paperheight,page=8]{\templatePath/images/backgrounds/backgrounds-original.pdf}}}
+
+
+\newcommand\mybar{\kern1pt\rule[-\dp\strutbox]{1pt}{\baselineskip}\kern1pt}
+
+
+\newcommand{\hnititlesize}{20} % If the title is too big, you might have to adjust the values of hnititlesize and hnititlelinespace
+\newcommand{\hnititlelinespace}{26}
+
+\newcommand{\hnisubtitlesize}{12} % If the title is too big, you might have to adjust the values of hnititlesize and hnititlelinespace
+\newcommand{\hnisubtitlelinespace}{16}
+
+\newcommand{\code}[1]{\texttt{#1}} % Use to show small code snippets
+
+\newcommand{\inserttitledate}{\today}
+\newcommand{\inserttitlelocation}{Paderborn}
+
+\newcommand{\blockheading}[1]{{\color{hni-blue}\textbf{#1}}} % Use to show small code snippets
+
+\newcommand{\overlayimage}[2]{
+	\begin{tikzpicture}[remember picture,overlay]
+		\node[drop shadow={shadow xshift=.8ex,shadow yshift=-.8ex},fill=white,draw] at (current page.center) {\includegraphics[width=#1cm]{#2}};
+	\end{tikzpicture}
+}
+
+
+\newcommand{\transitionslide}[2]{{
+%		\hnileftbackground 
+		\thispagestyle{empty}
+		\begin{frame}
+			\vfill
+			\hfill
+			\begin{center}
+				\leftskip=.25cm #1 #2 
+			\end{center}
+			\vfill
+		\end{frame}
+}}
+
+\usetikzlibrary{shapes.geometric}
+\newcommand{\hexclipper}[3]{%
+  \begin{tikzpicture} 
+    \foreach \ang in {30,60,...,360}{
+     \coordinate (\ang) at  (\ang:#1) ;}
+     \clip (30) -- (60) -- (90) -- (120) -- (150) -- (180) -- (210) -- (240) -- (270) -- (300) -- (330) -- (360) -- cycle;
+     \node{\includegraphics[width=#2]{{#3}}};
+  \end{tikzpicture}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Colors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{hni-blue}{RGB}{0, 58, 128}
+\definecolor{hni-light-blue}{RGB}{31, 130, 192}
+
+\definecolor{hni-green}{RGB}{23, 156, 125}
+\definecolor{hni-light-green}{RGB}{109, 191, 169}
+\definecolor{hni-yellow-green}{RGB}{177, 200, 0}
+
+\definecolor{hni-orange}{RGB}{253, 195, 0}
+
+\definecolor{hni-gray}{RGB}{180, 180, 180}
+
+\definecolor{hni-black}{RGB}{0.0, 0.0, 0.0}
+\definecolor{hni-light-black}{RGB}{64, 64, 64}
+
+\definecolor{uni-blue}{cmyk}{1.0, 0.85, 0.05, 0.36, 1.00}
+\definecolor{uni-cyan}{cmyk}{0.72, 0.08, 0.0, 0.0, 1.00}
+\definecolor{uni-green}{cmyk}{0.50, 0.0, 0.95, 0.0, 1.00}
+\definecolor{uni-orange}{cmyk}{0.0, 0.50, 0.95, 0.0, 1.00}
+\definecolor{uni-purple}{cmyk}{0.38, 0.88, 0.08, 0.0, 1.00}
+\definecolor{uni-gray}{cmyk}{0.0, 0.0, 0.0, 0.30}
+\definecolor{uni-black}{cmyk}{0.0, 0.0, 0.0, 0.80}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Theme
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setbeamertemplate{navigation symbols}{}
+\setbeamercolor{structure}{fg=hni-black} % itemize, enumerate, etc
+\setbeamercolor{normal text}{fg=hni-light-black}
+
+\setbeamercolor{section in toc}{fg=hni-light-black} % TOC sections
+\setbeamercolor{subsection in toc}{fg=hni-light-black} % TOC sections
+\setbeamertemplate{section in toc}[sections numbered]
+\setbeamertemplate{subsection in toc}[subsections numbered]
+
+\setbeamerfont{section number projected}{size=\large}
+\setbeamercolor{section number projected}{bg=hni-blue,fg=white}
+\setbeamercolor{subsection number projected}{bg=hni-black,fg=white}
+
+\setbeamercolor{block title}{fg=hni-blue}
+
+% Beamer doesnt support enumitems
+%\setitemize{label={\color{hni-light-black}\fontsize{4}{1}$\blacksquare$}enumitem,labelsep=0.2cm,leftmargin=*, parsep=3pt}
+
+% Universal background except title
+\usebackgroundtemplate{%
+	\includegraphics[width=\paperwidth,page=1]{\templatePath/images/backgrounds/otherbackground.pdf}}	
+
+%----------------------------------------------------------------------------------------
+%	FOOTER THEME
+%----------------------------------------------------------------------------------------
+
+\setbeamertemplate{footline}[text line]{%
+	
+	\setbeamercolor{footline}{bg=,fg=hni-light-black}	
+	
+	\begin{beamercolorbox}[sep=0.3cm,ht=2.6em,wd=\paperwidth]{footline}
+		\vbox{}\vskip-2ex%
+		\hspace{0.0cm}
+		
+		{\insertframenumber{ $ | $ } \footertext}
+		\hfill
+		\vskip-0.8ex%
+	\end{beamercolorbox}
+	
+}
+
+%----------------------------------------------------------------------------------------
+%	ITEMIZE CIRCLE
+%----------------------------------------------------------------------------------------
+
+\setbeamertemplate{itemize items}{
+	\begin{tikzpicture}
+		{\color{hni-light-black}\tiny$\blacksquare$}
+	\end{tikzpicture}
+}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\setbeamertemplate{title page}{%
+
+	\begin{tikzpicture}[remember picture,overlay]
+	
+	% Uni logo
+	\node[inner sep=0pt] (logo) at (1.25, 2.4)
+	{\includegraphics[width=.25\textwidth]{\templatePath/images/logos/logo.pdf}};
+	
+	% Uni pic
+	\node[inner sep=0pt] (logo) at (12.95, 1.9)
+	{\hexclipper{4cm}{8cm}{\templatePath/images/backgrounds/unibuilding.png}};	
+
+	\node[inner sep=0pt] (tit) at (5.25, -2.7)
+	{
+		\begin{minipage}[t]{0.9\linewidth} 
+		\setbeamercolor{title}{bg=uni-blue,fg=white}	
+		
+		\begin{minipage}[t]{1.0\linewidth} 
+		\setbeamercolor{title}{bg=,fg=uni-blue}	
+		\begin{beamercolorbox}[sep=2pt,left]{title}
+		{\hspace{4pt}{\vspace{0.1cm}\fontsize{\hnisubtitlesize}{\hnisubtitlesize}\fontfamily{phv}\fontseries{bc}\selectfont\bfseries\insertinstitute}}
+		\end{beamercolorbox}
+		
+		\end{minipage}  	
+		
+		\begin{minipage}{1.0\linewidth} 
+		
+		
+		\begin{beamercolorbox}[sep=8pt,left]{title}
+		
+		{\lenitem{\fontsize{\hnititlesize}{\hnititlelinespace}\fontfamily{phv}\fontseries{mc}\selectfont\bfseries\color{white}\raggedright\inserttitle}}%
+		
+		\end{beamercolorbox}
+		
+		\end{minipage}  	
+		
+		\ifx\insertsubtitle\@empty%
+		\else%
+		{		\begin{minipage}[t]{0.9\linewidth} 
+			\setbeamercolor{title}{bg=,fg=uni-blue}	
+			\begin{beamercolorbox}[sep=4pt,left]{subtitle}
+			{\hspace{4pt}\vspace{0.2cm}{\fontsize{\hnisubtitlesize}{\hnisubtitlelinespace}\fontfamily{phv}\fontseries{bc}\selectfont\bfseries \insertsubtitle}}
+			\end{beamercolorbox}
+			\end{minipage}  	
+		}
+		\fi%   			
+		
+		\end{minipage}  		
+		
+	};
+	
+	\end{tikzpicture}	
+	
+	\thispagestyle{empty}
+	
+}
+
+%----------------------------------------------------------------------------------------
+%	FRAME TITLE THEME
+%----------------------------------------------------------------------------------------
+
+\setbeamertemplate{frametitle}
+{
+	\nointerlineskip
+	
+	\fontfamily{phv}\fontseries{b}\selectfont\bfseries 
+	\setbeamercolor{frametitle}{bg=,fg=hni-light-black}	
+	
+	\begin{beamercolorbox}[sep=0.3cm,ht=1.5cm,wd=\paperwidth]{frametitle}		
+		\hfill
+		\vskip1.5cm%
+		\vspace{.7cm}
+		\hspace{0.53cm}
+		\insertframetitle
+	\end{beamercolorbox}
+	
+	\begin{beamercolorbox}[sep=0.3cm,ht=0cm,wd=\paperwidth]{frametitle}
+		\hfill
+		\vskip1.5cm%
+		\vspace{0.7cm}
+		\hspace{0.53cm}
+		{\fontsize{12}{10}\selectfont\color{hni-blue}\insertframesubtitle}	
+	\end{beamercolorbox}
+	
+	
+	\vspace{-1cm}
+	
+	
+	
+}

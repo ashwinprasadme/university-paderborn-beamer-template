@@ -1,6 +1,6 @@
-# University Paderborn LaTeX Beamer Template 
+# HNI/IEM LaTeX Beamer Template
 
-Easy to use LaTeX Beamer template that closely follows the official UPB PPT template. 
+(Unofficial) LaTeX Beamer template that closely follows the official HNI/IEM PPT template. 
 
 # Table of Contents
 1. [Preview](#preview)
@@ -11,14 +11,12 @@ Easy to use LaTeX Beamer template that closely follows the official UPB PPT temp
 
 ## Preview
 
-![Preview1](Doc/Preview/1.png)
-![Preview2](Doc/Preview/2.png)
+![Preview1](hni-iem-theme/images/preview1.jpg)
+![Preview2](hni-iem-theme/images/preview2.jpg)
 
 -----
 
 ## Getting Started
-
-Note: If LaTeX is completely new to you, it makes sense to watch the video tutorial from [youtube](https://www.youtube.com/watch?v=SoDv0qhyysQ) and continue further.
 
 1. Install [TeXstudio](https://www.texstudio.org/) (or similar LaTeX editor)
     + Windows
@@ -39,9 +37,7 @@ Note: If LaTeX is completely new to you, it makes sense to watch the video tutor
     + Explore how to use this template to create your presentation by using various predefined slide examples
 
 3. Edit presentation metadata to match your own
-    + Open `presentation-details.tex` and edit details like author, title, preferred university defined color, etc...
-    + Change the color preference by choosing one of the official UPB colors (choices are listed in the file)
-        + E.g. `\newcommand{\upbcolor}{uni-green}`
+    + Open `presentation-details.tex` and edit details like author, title, etc...
 
 4. Use Empty presentation to start from scratch
     + Open `Empty-Presentation.tex` to start with an empty presentation
@@ -50,10 +46,6 @@ Note: If LaTeX is completely new to you, it makes sense to watch the video tutor
 -----
 
 ## Notes
-
-+ Official UPB typeface "Arial" has been left out of this template, a close replacement typeface "Helvetica" has been used here. However, "Arial Narrow" can be used by following the guide [here](https://tex.stackexchange.com/a/20145).
-
-+ Colors defined under the file `internal/upb-unicolors.tex` are official UPB color codes taken from the "UPB Corporate Design Color Definition"
 
 + On ubuntu you might have to run `sudo apt-get install texlive-fonts-recommended` to install fonts
 
